@@ -1,0 +1,14 @@
+@media (max-width: 769px) {
+    .Grid{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+  }
+  
+  @media (max-width:475px) {
+  
+    
+  }
+  
