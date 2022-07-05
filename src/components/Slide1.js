@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import { Link } from "react-router-dom"
 import SimpleImageSlider from "react-simple-image-slider";
 
 function Slide1() {
@@ -30,7 +31,9 @@ function Slide1() {
                 <h4>GHS 150.00</h4>
               </Words>
               <AddCartButton>
-                <span>Add to cart</span>
+                <Link to={'/checkout'}>
+                    <span>Add to cart</span>
+                </Link>
               </AddCartButton>
             </BtnGrp>
 

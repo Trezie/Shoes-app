@@ -216,6 +216,15 @@ const Menu = styled.div`
 `
 const InitialBar = styled.div`
   margin-left:30px;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+    
+  }
+
+  @media only screen and (max-width: 475px) {
+    display: none;
+  }   
   
 
 `
@@ -423,6 +432,16 @@ const Grid = styled.div`
 
 `
 const Wrap =styled.div`
+  @media only screen and (max-width: 768px) {
+    height: 50%;
+    width: 30%;
+    
+  }
+
+  @media only screen and (max-width: 475px) {
+    height: 50%;
+    width: 30%;
+  }   
  
 `
 const Containme =styled.div`
