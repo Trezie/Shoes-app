@@ -10,6 +10,9 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import styled, { createGlobalStyle } from "styled-components";
+
 
 
 function App() {

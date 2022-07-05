@@ -1,62 +1,92 @@
 import React from 'react'
 import styled from 'styled-components'
 //import { makeStyles } from @mui/material/styles'
-import {useState} from 'react'
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faShoppingCart, faCircleUser } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faShoppingCart, faCircleUser, faBars} from '@fortawesome/free-solid-svg-icons'
+import  { useState, useEffect, useRef } from "react";
+import Side from './Side'
+
+
+
 
 
 
 
 function Header() {
-  return (
-    <div>
-     
-        <Nav className='col-lg-9 col-md-9'>
-   
-            <LogoSection className='"col-md-6"'>
-                <Logo src="/img/circle2-removebg-preview.png" />
-                <h1>Emmy_Shoes</h1>
+    const [openDrawer, toggleDrawer] = useState(false);
+    const drawerRef = useRef(null);
+    useEffect(() => {
+    /* Close the drawer when the user clicks outside of it */
+        const closeDrawer = event => {
+            if (drawerRef.current && drawerRef.current.contains(event.target)) {
+                return;
+            }
+
+            toggleDrawer(false);
+        };
+  
+        document.addEventListener("mousedown", closeDrawer);
+        return () => document.removeEventListener("mousedown", closeDrawer);
+    },  []);
+
+    return (
+        <div>
+        
+            <Nav className='col-lg-9 col-md-9'>
+    
+                <LogoSection className='"col-md-6"'>
+                    <Logo src="/img/circle2-removebg-preview.png" />
+                    <h1>Emmy_Shoes</h1>
 
 
-            </LogoSection>
-            
-            <>
-                <Search>
-                    <FontAwesomeIcon icon={faSearch}  />
-                    <input type="search" name="" placeholder="search here..." id="search-box" border="none"/>
-                    <label for="search-box" class="fas fa-search" FontAwesomeIcon icon={faSearch}> </label>
+                </LogoSection>
                 
+                <>
+                    <Search>
+                        <FontAwesomeIcon icon={faSearch}  />
+                        <input type="search" name="" placeholder="search here..." id="search-box" border="none"/>
+                        <label for="search-box" class="fas fa-search" FontAwesomeIcon icon={faSearch}> </label>
                     
+                        
+                        
+                        
+                    </Search>
                     
+
+                    <NavMenu>
                     
-                </Search>
+                    </NavMenu>
+                </>
+
+                <Wrap className="col-md-6">
+                    <IconRight>
+                        <FontAwesomeIcon icon={faShoppingCart} size="lg"/>   
+                        <Bars onClick={() => toggleDrawer(true)}>                 
+                            <FontAwesomeIcon icon={faBars} size="lg"/>
+                        </Bars>
+                        <Open>
+                           
+                        </Open>
+                    </IconRight>
+                    <Login>
+                        <a>
+                            <span>Login </span>
+                            <span>/</span>
+                            <span>Create account</span>
+                        </a>
+                        <User>
+                            <FontAwesomeIcon icon={faCircleUser} size="lg" />
+                        </User>
+                    </Login>               
+                </Wrap>
+                        
                 
-
-                <NavMenu>
-                
-                </NavMenu>
-            </>
-
-            <Wrap className="col-md-6">
-                <FontAwesomeIcon icon={faShoppingCart} />                    
-                <a>
-                    <span>Login </span>
-                    <span>/</span>
-                    <span>Create account</span>
-                </a>
-                <FontAwesomeIcon icon={faCircleUser} size="lg" />
-                <Image src="/img/circle-user-regular.svg" />
-                <Login></Login>               
-            </Wrap>
-                    
-            
-        </Nav>
+            </Nav>
 
 
-    </div>
-  )
+        </div>
+    )
 }
 
 const Nav = styled.nav`
@@ -70,6 +100,20 @@ const Nav = styled.nav`
   overflow-x: hidden;
   border: solid #DCDCDC 1px;
 
+  @media (max-width: 769px) {
+    #menu-btn {
+        width: 30px;
+        height: 30px;
+        display: initial;
+    }
+    
+    #menu-close {
+        display: initial;
+        font-size: 1.2rem;
+        color: #fff;
+        margin: 30px 20px 20px 20px;
+    }
+  }
 `
 
 const LogoSection = styled.div`
@@ -112,7 +156,12 @@ const Search = styled.div`
         border-color: transparent;
         margin-left: 20px;
         border-radius: 20px;
-        } 
+    } 
+
+    @media only screen and (max-width: 768px) {
+        display: none;
+        
+    }    
     
 
 `
@@ -127,6 +176,7 @@ const Wrap = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-right: 30px;
 
     a{
         display: flex;
@@ -152,5 +202,47 @@ const Image = styled.div`
 `
 
 const Login = styled.div`
+    display: flex;
+    a{
+        margin-left: 20px;
+    }
+    @media only screen and (max-width: 768px) {
+        display: none;
+        
+    }    
+`
+const Bars = styled.div`
+    margin-left: 30px;
+    width: 30px;
+    height: 30px;
+    display: none;
+
+    @media only screen and (max-width: 768px) {
+        display: initial;
+        
+    }
+    
+    @media only screen and (max-width: 475px) {
+        display: initial;
+    }      
+
+`
+const User = styled.div`
+    margin-left: 20px;
+`
+const IconRight = styled.div`
+    display: flex;
+
+    @media only screen and (max-width: 768px) {
+        display: initial;
+        
+    }
+    
+    @media only screen and (max-width: 475px) {
+        display: initial;
+    }      
+
+`
+const Open = styled.div`
 `
 export default Header

@@ -1,7 +1,6 @@
 @media (max-width: 769px) {
     .Grid{
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
@@ -9,6 +8,13 @@
   
   @media (max-width:475px) {
   
-    
+    .Container{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 330px 330px 330px;
+        grid-gap: 15px;
+        grid-auto-flow: row;
+
+    }
   }
   
