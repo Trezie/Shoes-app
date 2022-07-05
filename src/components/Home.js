@@ -248,6 +248,16 @@ const Sidebar = styled.div`
 const Mainbar = styled.div`
   margin-left: 30px;
 
+  @media only screen and (max-width: 768px) {
+    margin-left: 0;
+
+    
+  }
+
+  @media only screen and (max-width: 475px) {
+    margin-left: 0;
+  }  
+
 `
 const Contain = styled.div`
   margin-top: 60px;
@@ -350,6 +360,18 @@ const Content = styled.div`
     height: 7px;
     width: 30px;
   }
+
+  @media only screen and (max-width: 768px) {
+    h4{
+      margin-left: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 475px) {
+    h4{
+      margin-left: 20px;
+    }
+  }   
 
 `
 const line = styled.div `
