@@ -232,6 +232,7 @@ const InitialBar = styled.div`
 const Sidebar = styled.div`
   width: 20%;
   margin-top: 30px;
+  margin-left: 30px;
 
   @media only screen and (max-width: 768px) {
     display: none;

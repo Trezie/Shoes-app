@@ -11,7 +11,7 @@ function Slide1() {
 
     ];   
   return (
-    <div>
+    <Box>
         <SimpleImageSlider
             width={320}
             height={250}
@@ -40,7 +40,7 @@ function Slide1() {
             
 
         </AddToCart>     
-    </div>
+    </Box>
 
 
 
@@ -49,11 +49,20 @@ function Slide1() {
 }
 
 export default Slide1
+
+const Box = styled.div`
+ background: #F0F0F0;
+ box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+ rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+ transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+`
 const AddToCart = styled.div`
     padding: 10px;
     background-color: #F0F0F0;
     width: 300px;
-    height: 150px;
+    height: 155px;
+    padding-bottom: 10px;
+    text-decoration: none;
 
     h4{
         text-decoration: line-through;
@@ -67,6 +76,7 @@ const AddToCart = styled.div`
 
 `
 const First = styled.button`
+    background-color: #F0F0F0;
     width: 100%;
     display: flex;
     border: none;
@@ -80,6 +90,7 @@ const First = styled.button`
 `
 
 const BtnGrp = styled.button`
+    background-color: #F0F0F0;
     display: flex;
     outline: none;
     border: none;
@@ -105,6 +116,12 @@ const AddCartButton = styled.button`
     border: none;
     background: rgb (249, 249, 249); 
     border: solid 1px #6F4E37;
+    a{
+        text-decoration: none;
+
+    }
+    text-decoration: none;
+
 
     &:hover {
         background: rgb(198, 198, 198);
@@ -115,6 +132,8 @@ const AddCartButton = styled.button`
         color: white;
         font-weight: 700;
         font-size: 15px
+        text-decoration: none;
+
     }
 
 `
@@ -178,6 +197,7 @@ const Words = styled.button`
   border: none;
   justify-content: flex-start;
   line-height: .1px;
+  background-color: #F0F0F0;
 
 
 `

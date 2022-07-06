@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faShoppingCart, faCircleUser, faBars} from '@fortawesome/free-solid-svg-icons'
 import  { useState, useEffect, useRef } from "react";
 import Side from './Side'
+import "./Header.css";
 
 
 
@@ -33,9 +34,9 @@ function Header() {
     return (
         <div>
         
-            <Nav className='col-lg-9 col-md-9'>
+            <Nav className=''>
     
-                <LogoSection className='"col-md-6"'>
+                <LogoSection className='"col-sm-3"'>
                     <Logo src="/img/circle2-removebg-preview.png" />
                     <h1>Emmy_Shoes</h1>
 
@@ -59,7 +60,7 @@ function Header() {
                     </NavMenu>
                 </>
 
-                <Wrap className="col-md-6">
+                <Wrap className="col-sm-9">
                     <IconRight>
                         <FontAwesomeIcon icon={faShoppingCart} size="lg"/>   
                         <Bars onClick={() => toggleDrawer(true)}>                 
@@ -71,9 +72,7 @@ function Header() {
                     </IconRight>
                     <Login>
                         <a>
-                            <span>Login </span>
-                            <span>/</span>
-                            <span>Create account</span>
+                            <span>Login / Create account</span>
                         </a>
                         <User>
                             <FontAwesomeIcon icon={faCircleUser} size="lg" />
@@ -95,7 +94,7 @@ const Nav = styled.nav`
   display: flex;
   flexgrow: 1;
   align-items: center;
-  justify-content: space-between;
+ 
   padding: 0 36px;
   overflow-x: hidden;
   border: solid #DCDCDC 1px;
@@ -131,6 +130,11 @@ const LogoSection = styled.div`
 
     }
 
+    @media only screen and (max-width: 768px) {
+        margin-right: 300px;
+        
+    } 
+
 `
 const Logo = styled.img`
   height: 60px;
@@ -146,6 +150,7 @@ const Search = styled.div`
     border-radius: 20px;
     border: solid black 1px; 
     padding: 0 10px;
+    flex: 1;
 
     input{
         border-top-style: hidden;
@@ -224,25 +229,25 @@ const Bars = styled.div`
     
     @media only screen and (max-width: 475px) {
         display: initial;
+        margin-left: 20px;
     }      
 
 `
 const User = styled.div`
     margin-left: 20px;
 `
-const IconRight = styled.div`
-    display: flex;
 
-    @media only screen and (max-width: 768px) {
-        display: initial;
-        
-    }
-    
-    @media only screen and (max-width: 475px) {
-        display: initial;
-    }      
-
-`
 const Open = styled.div`
 `
 export default Header
+
+const IconRight = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    
+  
+
+`

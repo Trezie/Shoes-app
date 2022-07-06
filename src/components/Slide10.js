@@ -10,7 +10,7 @@ function Slide10() {
 
   ];    
   return (
-    <div>
+    <Box>
         <SimpleImageSlider
             width={320}
             height={250}
@@ -37,16 +37,24 @@ function Slide10() {
             
 
         </AddToCart>           
-    </div>
+    </Box>
   )
 }
 
 export default Slide10
+
+const Box = styled.div`
+ background: #F0F0F0;
+ box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+ rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+ transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+`
+
 const AddToCart = styled.div`
     padding: 10px;
     background-color: #F0F0F0;
     width: 300px;
-    height: 150px;
+    height: 155px;
 
     h4{
         text-decoration: line-through;

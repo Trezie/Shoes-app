@@ -12,16 +12,24 @@ function ImgSlide() {
     ];
   return (
 
-    <div>
+    <Img>
         <SimpleImageSlider
-            width={450}
+            width={380}
             height={250}
             images={images}
             showBullets={true}
             showNavs={true}
+          
         />
-    </div>
+    </Img>
   )
 }
 
 export default ImgSlide
+
+const Img = styled.div`
+  @media only screen and (max-width: 768px) {
+    width: 220px;
+
+  }
+`

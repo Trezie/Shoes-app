@@ -15,7 +15,9 @@ function Checkout() {
                     <FontAwesomeIcon icon={faArrowLeft} color="#6F4E37" />
                     <h6>Continue Shopping</h6>
                 </FirstLine>
-                <ImgSlide />
+                <Img>
+                    <ImgSlide />
+                </Img>
                 <Grid>
                     <Wrap>
                         <img src="/img/boot11.jpeg"/>
@@ -139,11 +141,32 @@ const Main = styled.div`
     box-sizing: border-box;
 
     min-height: calc(100vh - 70px);
-    padding: 0 calc(3.5vh-5px);
     position: relative;
     overflow-x: hidden;
     width: 100%;
+
+    @media only screen and (max-width: 768px) {
+        box-sizing: border-box;
+        width: 100%;
+
+    }
+    
+    @media only screen and (max-width: 768px) {
+        padding: 10px 0px;
+        box-sizing: border-box;
+
+    }
+    
+    
   
+`
+const Img = styled.div`
+    width: 450px;
+    @media only screen and (max-width: 768px) {
+        width: 50%;
+
+    }
+
 `
 const FirstLine = styled.div`
     display: flex;
@@ -158,17 +181,37 @@ const TopSection = styled.div`
     justify-content: space-between;
     flex-grow: 1;
 
+    @media only screen and (max-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 1em;
+        grid-row-gap: 5px;
+        
+    }
+    
+    
+    
+    
 `
 const Boot = styled.div`
+    @media only screen and (max-width: 768px) {
+        width: 50%;
+
+    }
 
 
 `
 const Grid = styled.div`
     margin-top: 20px;
     display: grid;
-    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-columns: 80px 80px 80px 80px;
     grid-gap: 15px;
     grid-auto-flow: row;
+
+    @media only screen and (max-width: 768px) {
+        width: 10%;
+
+    }
 
 `
 const Wrap = styled.div`
@@ -201,6 +244,11 @@ const AddToCart = styled.div`
         opacity: 1;
     }
 
+    @media only screen and (max-width: 768px) {
+        width: 85%;
+
+    }
+
 `
 const First = styled.button`
     width: 100%;
@@ -219,6 +267,8 @@ const BtnGrp = styled.button`
     outline: none;
     border: none;
     justify-content: flex-start;
+
+    
 `
 const AddCartButton = styled.button`
     width: 120px;
@@ -301,6 +351,10 @@ const MessageSeller = styled.button`
         font-size: 15px;
     }
 
+    @media only screen and (max-width: 768px) {
+        display: none;
+
+    }
 `
 const SimilarItem = styled.button`
     margin-top: 120px;
